@@ -48,10 +48,10 @@
     <Compile Include="Expressions\SubtractExpression.cs" />
     <Compile Include="Expressions\AddExpression.cs" />
     <Compile Include="Expressions\BaseExpression.cs" />
-    <Compile Include="Expressions\BaseCallFunctionExpression.cs" />
+    <Compile Include="Expressions\Functions\BaseCallFunctionExpression.cs" />
     <Compile Include="Expressions\BaseBinaryExpression.cs" />
     <Compile Include="Expressions\ColorExpression.cs" />
-    <Compile Include="Expressions\IsColorExpression.cs" />
+    <Compile Include="Expressions\Functions\IsColorExpression.cs" />
     <Compile Include="Expressions\NumberExpression.cs" />
     <Compile Include="Expressions\NumberUnit.cs" />
     <Compile Include="Expressions\VariableExpression.cs" />
@@ -60,9 +60,10 @@
     <Compile Include="Nodes\MixinDeclarationNode.cs" />
     <Compile Include="Nodes\RulesetNode.cs" />
     <Compile Include="Nodes\StyleDeclarationNode.cs" />
-    <Compile Include="Nodes\VariableDeclarationNode.cs" />
+    <Compile Include="Nodes\AssignmentNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scope.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

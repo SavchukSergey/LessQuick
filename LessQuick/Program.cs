@@ -1,4 +1,5 @@
 ﻿using LessQuick.Expressions;
+using LessQuick.Expressions.Functions;
 using LessQuick.Nodes;
 using System;
 
@@ -8,7 +9,7 @@ namespace LessQuick {
         public static void Main() {
             var ruleset = new RulesetNode {
                 Children = {
-                    new VariableDeclarationNode("base", new ColorExpression("#f938ab")),
+                    new AssignmentNode("base", new ColorExpression("#f938ab")),
                     new MixinDeclarationNode("box-shadow")
                         .AddArgument("style")
                         .AddArgument("c", new NumberExpression(50, NumberUnit.Percentage))

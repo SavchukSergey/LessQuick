@@ -1,4 +1,4 @@
-﻿namespace LessQuick.Expressions {
+﻿namespace LessQuick.Expressions.Functions {
     public class IsColorExpression : BaseCallFunctionExpression {
 
         public IsColorExpression() {

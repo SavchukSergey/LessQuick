@@ -2,12 +2,12 @@
 using LessQuick.Expressions;
 
 namespace LessQuick.Nodes {
-    public class VariableDeclarationNode : BaseNode {
+    public class AssignmentNode : BaseNode {
 
-        public VariableDeclarationNode() {
+        public AssignmentNode() {
         }
 
-        public VariableDeclarationNode(string name, BaseExpression value) {
+        public AssignmentNode(string name, BaseExpression value) {
             Name = name;
             Value = value;
         }

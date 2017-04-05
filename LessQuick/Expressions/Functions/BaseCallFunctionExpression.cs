@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace LessQuick.Expressions {
+namespace LessQuick.Expressions.Functions {
     public abstract class BaseCallFunctionExpression : BaseExpression {
 
         public abstract string Name { get; }
