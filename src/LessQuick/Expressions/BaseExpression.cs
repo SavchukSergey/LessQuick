@@ -1,9 +1,7 @@
-﻿using System.IO;
+﻿using LessQuick.Nodes;
 
 namespace LessQuick.Expressions {
-    public abstract class BaseExpression {
-
-        public abstract void ToLess(TextWriter writer);
+    public abstract class BaseExpression : BaseNode {
 
         public static BaseExpression Parse(string str, ref int startIndex) {
             SkipWhite(str, ref startIndex);

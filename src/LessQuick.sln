@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessQuick", "LessQuick\LessQuick.csproj", "{B87A2961-D921-41BB-96C3-B0255F6D892F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B6D994C6-CCE8-4BC5-8DE6-D7237B5E8966}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\less-bnf.md = ..\docs\less-bnf.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

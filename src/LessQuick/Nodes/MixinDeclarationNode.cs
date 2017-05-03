@@ -24,7 +24,7 @@ namespace LessQuick.Nodes {
             return this;
         }
 
-        public MixinDeclarationNode AddArgument(string name, NumberExpression defaultValue) {
+        public MixinDeclarationNode AddArgument(string name, BaseExpression defaultValue) {
             Arguments.Add(new MixinArgument(name, defaultValue));
             return this;
         }
