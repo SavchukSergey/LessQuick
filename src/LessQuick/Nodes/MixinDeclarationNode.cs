@@ -1,7 +1,5 @@
 ﻿using LessQuick.Expressions;
 using System.Collections.Generic;
-using System.IO;
-using System;
 
 namespace LessQuick.Nodes {
     public class MixinDeclarationNode : RulesetNode {
@@ -34,7 +32,7 @@ namespace LessQuick.Nodes {
             return this;
         }
 
-        public override void ToLess(TextWriter writer) {
+        public override void ToLess(LessWriter writer) {
             writer.Write('.');
             writer.Write(Name);
 
@@ -57,9 +55,9 @@ namespace LessQuick.Nodes {
                 writer.Write(' ');
             }
 
-            writer.WriteLine('{');
+            writer.WriteStartBlock();
             base.ToLess(writer);
-            writer.WriteLine('}');
+            writer.WriteEndBlock();
         }
 
     }

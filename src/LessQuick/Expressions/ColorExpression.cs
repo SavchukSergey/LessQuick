@@ -12,7 +12,7 @@ namespace LessQuick.Expressions {
 
         public string Value { get; set; }
 
-        public override void ToLess(TextWriter writer) {
+        public override void ToLess(LessWriter writer) {
             writer.Write(Value);
         }
 

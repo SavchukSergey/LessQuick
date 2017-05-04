@@ -16,9 +16,8 @@ namespace LessQuick.Nodes {
 
         public BaseExpression Value { get; set; }
 
-        public override void ToLess(TextWriter writer) {
-            writer.Write('@');
-            writer.Write(Name);
+        public override void ToLess(LessWriter writer) {
+            writer.WriteVariableName(Name);
             writer.Write(':');
             writer.Write(' ');
             Value.ToLess(writer);

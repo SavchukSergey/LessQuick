@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace LessQuick.Expressions {
+﻿namespace LessQuick.Expressions {
     public class VariableExpression : BaseExpression {
 
         public string Name { get; set; }
@@ -12,9 +10,8 @@ namespace LessQuick.Expressions {
             Name = name;
         }
 
-        public override void ToLess(TextWriter writer) {
-            writer.Write('@');
-            writer.Write(Name);
+        public override void ToLess(LessWriter writer) {
+            writer.WriteVariableName(Name);
         }
     }
 }

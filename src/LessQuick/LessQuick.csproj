@@ -56,18 +56,25 @@
     <Compile Include="Expressions\NumberUnit.cs" />
     <Compile Include="Expressions\VariableExpression.cs" />
     <Compile Include="LessParser.cs" />
+    <Compile Include="LessWriter.cs" />
     <Compile Include="Nodes\BaseNode.cs" />
     <Compile Include="Nodes\MixinArgument.cs" />
     <Compile Include="Nodes\MixinDeclarationNode.cs" />
     <Compile Include="Nodes\RulesetNode.cs" />
+    <Compile Include="Nodes\Selectors\AttributeSelectorNode.cs" />
+    <Compile Include="Nodes\Selectors\SelectorNode.cs" />
+    <Compile Include="Nodes\Selectors\BaseSelectorComponentNode.cs" />
+    <Compile Include="Nodes\Selectors\ClassNameSelectorNode.cs" />
+    <Compile Include="Nodes\Selectors\IdSelectorNode.cs" />
+    <Compile Include="Nodes\Selectors\PseudoSelectorNode.cs" />
+    <Compile Include="Nodes\Selectors\SimpleSelectorNode.cs" />
     <Compile Include="Nodes\StyleDeclarationNode.cs" />
     <Compile Include="Nodes\AssignmentNode.cs" />
     <Compile Include="Nodes\StylesheetNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scope.cs" />
-    <Compile Include="Token.cs" />
-    <Compile Include="TokenType.cs" />
+    <Compile Include="SyntaxException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

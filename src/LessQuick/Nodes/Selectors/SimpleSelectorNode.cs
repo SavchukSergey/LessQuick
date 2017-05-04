@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace LessQuick.Nodes.Selectors {
-    public class SimpleSelectorNode : BaseSelectorNode {
+    public class SimpleSelectorNode : SelectorNode {
 
         public string ElementName { get; set; }
 

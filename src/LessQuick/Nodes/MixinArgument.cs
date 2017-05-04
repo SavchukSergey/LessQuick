@@ -20,9 +20,8 @@ namespace LessQuick.Nodes {
 
         public BaseExpression Default { get; set; }
 
-        public void ToLess(TextWriter writer) {
-            writer.Write('@');
-            writer.Write(Name);
+        public void ToLess(LessWriter writer) {
+            writer.WriteMixinName(Name);
             if (Default != null) {
                 writer.Write(':');
                 writer.Write(' ');
@@ -32,7 +31,7 @@ namespace LessQuick.Nodes {
 
         public override string ToString() {
             using (var writer = new StringWriter()) {
-                ToLess(writer);
+                ToLess(new LessWriter(writer));
                 return writer.GetStringBuilder().ToString();
             }
         }

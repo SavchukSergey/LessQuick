@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LessQuick.Nodes.Selectors;
+using System.Collections.Generic;
 
 namespace LessQuick.Nodes {
     public class RulesetNode : BaseNode {
@@ -10,15 +11,15 @@ namespace LessQuick.Nodes {
         public override void ToLess(LessWriter writer) {
             for (var i = 0; i < Selectors.Count; i++) {
                 if (i != Selectors.Count - 1) {
-                    writer.Comma();
+                    writer.WriteComma();
                 }
                 Selectors[i].ToLess(writer);
             }
-            writer.StartBlock();
+            writer.WriteStartBlock();
             foreach (var child in Children) {
                 child.ToLess(writer);
             }
-            writer.EndBlock();
+            writer.WriteEndBlock();
         }
     }
 }

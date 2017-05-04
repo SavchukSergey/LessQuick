@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 
 namespace LessQuick.Expressions.Functions {
     public abstract class BaseCallFunctionExpression : BaseExpression {
@@ -9,7 +7,7 @@ namespace LessQuick.Expressions.Functions {
 
         public IList<BaseExpression> Arguments { get; } = new List<BaseExpression>();
 
-        public override void ToLess(TextWriter writer) {
+        public override void ToLess(LessWriter writer) {
             writer.Write(Name);
             writer.Write('(');
             var cnt = Arguments.Count;

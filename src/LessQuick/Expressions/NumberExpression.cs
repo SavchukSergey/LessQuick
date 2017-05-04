@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.IO;
 
 namespace LessQuick.Expressions {
     public class NumberExpression : BaseExpression {
@@ -16,7 +15,7 @@ namespace LessQuick.Expressions {
 
         public NumberUnit Unit { get; set; }
 
-        public override void ToLess(TextWriter writer) {
+        public override void ToLess(LessWriter writer) {
             writer.Write(Value.ToString(CultureInfo.InvariantCulture));
             switch(Unit) {
                 case NumberUnit.Percentage:

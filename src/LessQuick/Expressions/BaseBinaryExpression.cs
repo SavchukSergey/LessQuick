@@ -17,11 +17,9 @@ namespace LessQuick.Expressions {
 
         protected abstract string Operator { get; }
 
-        public override void ToLess(TextWriter writer) {
+        public override void ToLess(LessWriter writer) {
             Left.ToLess(writer);
-            writer.Write(' ');
-            writer.Write(Operator);
-            writer.Write(' ');
+            writer.WriteOperator(Operator);
         }
     }
 }

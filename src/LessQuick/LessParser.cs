@@ -1,7 +1,6 @@
 ﻿using LessQuick.Nodes;
 using LessQuick.Nodes.Selectors;
 using System;
-using System.Collections.Generic;
 
 namespace LessQuick {
     public class LessParser {
@@ -26,12 +25,27 @@ namespace LessQuick {
             var res = new RulesetNode();
             do {
                 var selector = ParseSelector(content, ref index);
+                SkipWhite(content, ref index);
+                if (index < content.Length) {
+                    var ch = content[index];
+                    if (ch != '{') throw new SyntaxException("'{' expected");
+                }
             } while (index < content.Length);
             return res;
         }
 
-        private static BaseSelectorNode ParseSelector(string content, ref int index) {
-            var selector = ParseSimpleSelector();
+        private static SelectorNode ParseSelector(string content, ref int index) {
+            var res = new SelectorNode();
+            res.Selectors.Add(ParseSimpleSelector(content, ref index));
+            SkipWhite(content, ref index);
+            while (index < content.Length) {
+                var ch = content[index];
+                if (ch == ':' || ch == '#' || ch == '[' || ch == '.' || char.IsLetter(ch)) {
+                    res.Selectors.Add(ParseSimpleSelector(content, ref index));
+                    SkipWhite(content, ref index);
+                } else break;
+            }
+            return res;
         }
 
         private static SimpleSelectorNode ParseSimpleSelector(string content, ref int index) {
@@ -45,11 +59,15 @@ namespace LessQuick {
                 } else if (char.IsLetter(ch)) {
                     res.ElementName = ParseElementName(content, ref index);
                 }
-                
-                if (ch == ':' || ch == '#' || ch == '[' || ch == '.') {
-                    res.Components.Add(ParseSimpleSelectorComponent(content, ref index));
-                } else {
-                    throw new SyntaxException("selector expected");
+
+                while (index < content.Length) {
+                    ch = content[index];
+                    if (char.IsWhiteSpace(ch) || ch == '{') break;
+                    if (ch == ':' || ch == '#' || ch == '[' || ch == '.') {
+                        res.Components.Add(ParseSimpleSelectorComponent(content, ref index));
+                    } else {
+                        throw new SyntaxException("selector expected");
+                    }
                 }
 
                 return res;

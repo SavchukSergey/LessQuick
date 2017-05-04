@@ -1,5 +1,5 @@
 ﻿namespace LessQuick.Nodes.Selectors {
-    public abstract class BaseSelectorComponentNode : BaseSelectorNode {
+    public abstract class BaseSelectorComponentNode : SelectorNode {
 
     }
 }
